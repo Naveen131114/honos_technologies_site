@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Eye, Lightbulb, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 
 export default function About() {
   return (
@@ -29,9 +30,9 @@ export default function About() {
           </div>
         </div>
         <div className="mission-grid">
-          <article className="mission-card"><span className="mission-icon"><Target size={20} /></span><div><span className="eyebrow">Our mission</span><p>Make technology useful, accessible and impactful for the businesses we serve.</p></div></article>
-          <article className="mission-card"><span className="mission-icon mission-icon-violet"><Eye size={20} /></span><div><span className="eyebrow">Our vision</span><p>Build a smarter future where every business can thrive through thoughtful digital solutions.</p></div></article>
-          <article className="mission-card"><span className="mission-icon mission-icon-cyan"><Lightbulb size={20} /></span><div><span className="eyebrow">Our approach</span><p>Listen closely, build with care and stay alongside our clients as they grow.</p></div></article>
+          <ScrollReveal as="article" className="mission-card"><span className="mission-icon"><Target size={20} /></span><div><span className="eyebrow">Our mission</span><p>Make technology useful, accessible and impactful for the businesses we serve.</p></div></ScrollReveal>
+          <ScrollReveal as="article" className="mission-card" delay={0.08}><span className="mission-icon mission-icon-violet"><Eye size={20} /></span><div><span className="eyebrow">Our vision</span><p>Build a smarter future where every business can thrive through thoughtful digital solutions.</p></div></ScrollReveal>
+          <ScrollReveal as="article" className="mission-card" delay={0.16}><span className="mission-icon mission-icon-cyan"><Lightbulb size={20} /></span><div><span className="eyebrow">Our approach</span><p>Listen closely, build with care and stay alongside our clients as they grow.</p></div></ScrollReveal>
         </div>
       </div>
     </section>

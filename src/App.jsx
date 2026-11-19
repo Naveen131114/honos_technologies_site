@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import SectionTitle from './components/SectionTitle.jsx';
+import ScrollReveal from './components/ScrollReveal.jsx';
 import ServiceCard from './components/ServiceCard.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
@@ -31,9 +31,9 @@ function Services() {
         <SectionTitle eyebrow="What we do" title={<>Technology that moves<br className="desktop-break" /> your business forward.</>} description="Thoughtful digital services to help you work smarter, serve better and grow with confidence." />
         <div className="service-grid">
           {services.map((service, index) => (
-            <motion.div key={service.number} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}>
+            <ScrollReveal key={service.number} delay={(index % 3) * 0.08} amount={0.18}>
               <ServiceCard {...service} />
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
         <a className="text-link services-link" href="#contact">Have a project in mind? Let’s talk <ArrowUpRight size={17} /></a>
@@ -48,15 +48,15 @@ function CallToAction() {
       <div className="cta-orb cta-orb-one" aria-hidden="true" />
       <div className="cta-orb cta-orb-two" aria-hidden="true" />
       <div className="container cta-content">
-        <div>
+        <ScrollReveal>
           <span className="eyebrow eyebrow-light">Your next chapter starts here</span>
           <h2>Let’s build something<br className="desktop-break" /> great together.</h2>
           <p>Have a business idea or looking for the right technology partner? Let’s discuss your project.</p>
-        </div>
-        <div className="cta-actions">
+        </ScrollReveal>
+        <ScrollReveal className="cta-actions" delay={0.12}>
           <a className="button button-white" href="#contact">Contact us <ArrowUpRight size={17} /></a>
           <a className="cta-secondary" href="#contact">Get a quote <ArrowUpRight size={16} /></a>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

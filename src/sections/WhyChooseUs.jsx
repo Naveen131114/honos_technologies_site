@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, HeartHandshake, Layers3, LifeBuoy, ShieldCheck, Sparkles, UsersRound } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 
 const values = [
   { icon: HeartHandshake, title: 'Client-focused solutions', description: 'We start with your goals and shape the work around what matters to you.' },
@@ -15,13 +16,17 @@ export default function WhyChooseUs() {
   return (
     <section className="section why-section">
       <div className="container why-layout">
-        <div className="why-intro">
+        <ScrollReveal className="why-intro">
           <SectionTitle eyebrow="The Honos difference" title={<>A partner who gets your business.</>} description="Good technology is more than code. It’s a better way to solve the challenges your business faces every day." />
           <a className="button button-outline" href="#contact">Why work with us? <Check size={16} /></a>
           <div className="why-note"><span className="note-line" /> Real people. Clear thinking. Dependable delivery.</div>
-        </div>
+        </ScrollReveal>
         <div className="why-grid">
-          {values.map(({ icon: Icon, title, description }) => <article className="why-item" key={title}><span className="why-icon"><Icon size={19} /></span><div><h3>{title}</h3><p>{description}</p></div></article>)}
+          {values.map(({ icon: Icon, title, description }, index) => (
+            <ScrollReveal as="article" className="why-item" key={title} delay={(index % 2) * 0.08}>
+              <span className="why-icon"><Icon size={19} /></span><div><h3>{title}</h3><p>{description}</p></div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

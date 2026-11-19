@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Mail, MapPin, Phone, Send } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle.jsx';
+import ScrollReveal from '../components/ScrollReveal.jsx';
 
 const address = '7/3/104, ST-2, A.I.B.E.A Nagar, B Colony, Paravai, Madurai - 625402, Tamil Nadu, India';
 
@@ -39,7 +40,7 @@ export default function Contact({ onSubmit, submitted }) {
           <a className="contact-email-link" href="mailto:info@honostechnologies.com">Prefer email? <span>Write to us <ArrowUpRight size={15} /></span></a>
         </div>
         <div className="contact-layout">
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <ScrollReveal as="form" className="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="form-top"><div><h3>Start a conversation</h3><p>Fields marked <span>*</span> are required.</p></div><span className="form-mark"><Send size={19} /></span></div>
             <div className="form-row">
               <label>Name <span>*</span><input name="name" value={form.name} onChange={update} placeholder="Your name" autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} />{errors.name && <small id="name-error" className="field-error">{errors.name}</small>}</label>
@@ -52,8 +53,8 @@ export default function Contact({ onSubmit, submitted }) {
             <label>Message <span>*</span><textarea name="message" rows="4" value={form.message} onChange={update} placeholder="Tell us a little about what you need..." aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-error' : undefined} />{errors.message && <small id="message-error" className="field-error">{errors.message}</small>}</label>
             <div className="form-submit-row"><button className="button button-primary" type="submit">Send an enquiry <ArrowUpRight size={16} /></button><span><span className="secure-dot" /> Your details stay private.</span></div>
             {submitted && <p className="form-success" role="status">Your email app should open with your enquiry. If it didn’t, email us at info@honostechnologies.com.</p>}
-          </form>
-          <aside className="contact-card">
+          </ScrollReveal>
+          <ScrollReveal as="aside" className="contact-card" delay={0.1}>
             <div className="contact-card-top"><span className="eyebrow eyebrow-light">Contact details</span><h3>We’re just a message away.</h3><p>Have a question? Reach us directly—we’d be happy to help.</p></div>
             <div className="contact-details">
               <a href="mailto:info@honostechnologies.com"><span className="contact-icon"><Mail size={18} /></span><span><small>Email us</small><strong>info@honostechnologies.com</strong></span><ArrowUpRight size={15} /></a>
@@ -61,12 +62,12 @@ export default function Contact({ onSubmit, submitted }) {
               <a href={`https://maps.google.com/?q=${encodeURIComponent(address)}`} target="_blank" rel="noreferrer"><span className="contact-icon"><MapPin size={18} /></span><span><small>Visit us</small><strong>{address}</strong></span><ArrowUpRight size={15} /></a>
             </div>
             <a className="whatsapp-link" href="https://wa.me/917373295504" target="_blank" rel="noreferrer">Message us on WhatsApp <ArrowUpRight size={15} /></a>
-          </aside>
+          </ScrollReveal>
         </div>
-        <div className="map-frame">
+        <ScrollReveal className="map-frame" amount={0.08}>
           <iframe title="Map showing Honos Technologies in Paravai, Madurai" src={`https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
           <div className="map-label"><MapPin size={16} /><span>Honos Technologies <small>Paravai, Madurai</small></span><a href={`https://maps.google.com/?q=${encodeURIComponent(address)}`} target="_blank" rel="noreferrer" aria-label="Open Honos Technologies location in Google Maps"><ArrowUpRight size={15} /></a></div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
