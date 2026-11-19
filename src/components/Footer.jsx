@@ -9,11 +9,12 @@ export default function Footer() {
       <div className="container footer-main">
         <div className="footer-brand-column">
           <a className="brand brand-footer" href="#home">
-            <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
-            <span className="brand-text">HONOS <b>TECHNOLOGIES</b></span>
+            {/* <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
+            <span className="brand-text">HONOS <b>TECHNOLOGIES</b></span> */}
+            <img className="brand-logo" src="/honos_logo.png" alt="Honos Technologies" />
           </a>
           <p>We turn thoughtful ideas into technology that helps businesses do more, every day.</p>
-          <a className="footer-social" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in a new tab)">in <ArrowUpRight size={13} /></a>
+          {/* <a className="footer-social" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in a new tab)">in <ArrowUpRight size={13} /></a> */}
         </div>
         <div className="footer-column">
           <h3>Explore</h3>

@@ -18,8 +18,11 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="navbar container" aria-label="Main navigation">
         <a className="brand" href="#home" onClick={closeMenu} aria-label="Honos Technologies home">
+          {/*
           <span className="brand-mark" aria-hidden="true"><span /><span /><span /></span>
           <span className="brand-text">HONOS <b>TECHNOLOGIES</b></span>
+          */}
+          <img className="brand-logo" src="/honos_logo.png" alt="Honos Technologies" />
         </a>
         <button className="menu-toggle" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>
           {open ? <X size={23} /> : <Menu size={23} />}
